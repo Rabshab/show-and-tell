@@ -15,7 +15,6 @@ class App extends React.Component {
 
 class MusicSystemDetails extends React.Component {
   state = { isModalOpen: false };
-
   render() {
     return (
       <>
