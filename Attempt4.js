@@ -13,7 +13,6 @@ class FullScreenBlurModal extends React.Component {
 
   render() {
     const styles = getStyles(this.props);
-    const { onClose } = this.props;
 
     return <div style={styles.root} id="full-screen-modal" />;
   }
@@ -26,6 +25,7 @@ const FullScreenBlurModalContext = React.createContext({
 
 class App extends React.Component {
   state = { isModalOpen: false };
+
   render() {
     const { isModalOpen } = this.state;
     return (
@@ -66,11 +66,13 @@ class MusicSystemDetails extends React.Component {
         )}
 
         <ProductImage />
-        <Button onClick={() => this.setState({ isSpaceLauncherOpen: true })} />
+        <Button onClick={this.handleOpen} />
         <Settings />
       </>
     );
   }
+
+  handleOpen = () => this.setState({ isSpaceLauncherOpen: true })
 
   handleClose = () => this.setState({ isSpaceLauncherOpen: false });
 }

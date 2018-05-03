@@ -23,16 +23,16 @@ class MusicSystemDetails extends React.Component {
           <p>Content Here</p>
         </FullScreenBlurModal>
         <ProductImage />
-        <Button
-          onClick={() => {
-            this.setState({ isModalOpen: true });
-            dispatch(openBlurModal());
-          }}
-        />
+        <Button onClick={this.handleClick} />
         <Settings />
       </>
     );
   }
+
+  handleClick = () => {
+    this.setState({ isModalOpen: true });
+    dispatch(openBlurModal());
+  };
 
   handleClose = () => {
     this.setState({ isModalOpen: false });
